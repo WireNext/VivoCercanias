@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renfe GTFS Realtime Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+        #map { width: 70%; height: 100vh; float: left; }
+        #sidebar { width: 30%; height: 100vh; float: right; padding: 15px; overflow-y: auto; background: #f4f4f4; box-shadow: -2px 0 5px rgba(0,0,0,0.1); }
+        .train-info { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .train-info:last-child { border-bottom: none; }
+        .status-rt { color: #007bff; font-weight: bold; }
+        .status-prog { color: #ff9900; }
+        .status-cancel { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="sidebar">
+        <h2>🚆 Información de Trenes</h2>
+        <p id="station-title">Cargando...</p>
+        <div id="realtime-data"></div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
