@@ -22,14 +22,14 @@ jobs:
           
       - name: Instalar Dependencias del Backend
         # Instala las dependencias necesarias para la ingesta (incluyendo pandas y psycopg2)
-        run: pip install -r backend/requirements.txt
+        run: pip install -r requirements.txt
         
       - name: Ejecutar Script de Ingesta (gtfs_ingestor.py)
         # El script descarga el ZIP de Renfe y lo carga en la DB
         env:
           # Utiliza el Secreto de GitHub para la URL de conexión a tu PostgreSQL
           DATABASE_URL: ${{ secrets.POSTGRES_URL }}
-        run: python backend/gtfs_ingestor.py
+        run: python gtfs_ingestor.py
         
       - name: Notificación de Éxito
         # (Opcional) Puedes añadir un paso aquí para enviar un mensaje a Slack/Email si la carga tiene éxito.
